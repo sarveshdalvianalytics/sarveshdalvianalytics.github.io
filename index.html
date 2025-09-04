@@ -1,0 +1,307 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sarvesh Dalvi — Sports Data & Performance Analytics</title>
+  <meta name="description" content="Portfolio of Sarvesh Dalvi — Sports Data & Performance Analyst. Football reports, analytics coursework, and dashboards.">
+  <meta property="og:title" content="Sarvesh Dalvi — Sports Data & Performance Analytics">
+  <meta property="og:description" content="Football analysis, reports, and dashboards.">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#0e1117">
+  <style>
+    :root{
+      --bg:#0e1117; --panel:#0f141b; --card:#141a22; --border:#2a3340;
+      --text:#e6edf3; --muted:#9aa4af; --link:#58a6ff; --chip:#1f2a36;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;background:var(--bg);color:var(--text);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial}
+    a{color:var(--link);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .container{max-width:1100px;margin:0 auto;padding:24px}
+    header.hero{padding:32px 0 8px}
+    .title{font-size:40px;letter-spacing:.3px;margin:0 0 4px}
+    .tagline{color:var(--muted);margin:0 0 16px}
+    .nav{display:flex;gap:16px;flex-wrap:wrap;margin:8px 0 8px}
+    .btn{display:inline-flex;align-items:center;gap:8px;background:#1b222c;border:1px solid var(--border);color:var(--text);
+         padding:10px 12px;border-radius:12px;text-decoration:none}
+    .btn:hover{border-color:#8b949e}
+    .btn.small{padding:6px 8px;border-radius:10px;font-size:14px}
+    .panel{background:var(--panel);border:1px solid var(--border);border-radius:16px;padding:16px;box-shadow:var(--shadow)}
+    .filters{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0 2px}
+    .filter{background:#1a2029;border:1px solid var(--border);color:var(--text);padding:8px 12px;border-radius:999px;cursor:pointer;font-size:14px}
+    .filter.active{background:#223047;border-color:#3a4b63}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin-top:14px}
+    .card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:16px;display:flex;flex-direction:column;gap:12px;box-shadow:var(--shadow)}
+    .thumb{height:140px;border-radius:10px;background:linear-gradient(135deg,#1b2330,#121820);border:1px dashed #2c3848;display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:14px}
+    .card h3{margin:0;font-size:20px;line-height:1.35}
+    .desc{color:var(--muted);margin:0;font-size:14px}
+    .tags{display:flex;gap:6px;flex-wrap:wrap}
+    .chip{background:#1f2a36;border:1px solid var(--border);border-radius:999px;padding:4px 10px;font-size:12px;color:var(--muted)}
+    .actions{display:flex;gap:8px;flex-wrap:wrap}
+    .more{display:none;color:var(--muted);font-size:14px;margin:2px 0 0 2px}
+    .more ul{margin:6px 0 0 18px}
+    footer{color:var(--muted);font-size:13px;margin:32px 0 16px;text-align:center}
+    .kbd{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,"Liberation Mono",Consolas,monospace;background:#10151d;border:1px solid var(--border);padding:1px 6px;border-radius:6px;color:#cbd5e1}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="hero">
+      <h1 class="title">Sarvesh Dalvi</h1>
+      <p class="tagline">Sports Data &amp; Performance Analytics — football-first reports, coursework, and live dashboards.</p>
+      <nav class="nav">
+        <a class="btn" href="mailto:sarveshdlvuk@gmail.com">Email</a>
+        <a class="btn" target="_blank" rel="noopener" href="https://www.linkedin.com/in/sarveshdalvi80">LinkedIn</a>
+        <a class="btn" target="_blank" rel="noopener" href="https://public.tableau.com/app/profile/sarvesh.dalvi">Tableau Profile</a>
+        <span class="btn" title="CV changes often — ask for latest.">CV available on request</span>
+      </nav>
+    </header>
+
+    <section class="panel">
+      <div class="filters" id="filters"></div>
+      <div class="grid" id="grid"></div>
+    </section>
+
+    <footer>
+      <p>Tip: Press <span class="kbd">/</span> to quick-filter by tag or title. Built as a static page (no frameworks).</p>
+    </footer>
+  </div>
+
+<script>
+// ===== Project data (easy to edit later) =====
+const PROJECTS = [
+  {
+    title: "Five-Substitution Rule — Effects on Strategy & Welfare",
+    kind: "Report (PDF)",
+    desc: "Pre/post natural experiment on substitution behaviour and minutes distribution across players.",
+    bullets: [
+      "Compared pre- vs post-change windows for substitution timing and counts.",
+      "Summarised minutes dispersion by role; highlighted equity and fatigue angles.",
+      "Framed applied guidance for managing late-game freshness."
+    ],
+    tags: ["football","policy","substitutions","methods"],
+    link: "Impact%20of%20the%20Five-Substitution%20Rule%20-%20Sarvesh.pdf",
+    linkLabel: "Open PDF",
+    external: false
+  },
+  {
+    title: "Barcelona — Pedri & Zone 14 Dependency",
+    kind: "Report (PDF)",
+    desc: "Visual analytics benchmarking Pedri; mapping Barca’s Zone-14 control and final-third connections.",
+    bullets: [
+      "Built pass-networks and Zone-14 touch/creation maps.",
+      "Benchmarked Pedri vs peers on progression and retention metrics.",
+      "Identified ball-progression patterns underpinning chance creation."
+    ],
+    tags: ["football","club analysis","passing","viz"],
+    link: "Pedri_FC_Barcelona_Analysis.pdf",
+    linkLabel: "Open PDF",
+    external: false
+  },
+  {
+    title: "Penalty Corners & Match Results — Field Hockey",
+    kind: "Report (PDF)",
+    desc: "72-match FIH Pro League (Women) sample linking PC conversion to points.",
+    bullets: [
+      "Calculated conversion and opportunities; correlated with match outcomes.",
+      "Assessed effect sizes vs open-play scoring.",
+      "Outlined set-play training implications."
+    ],
+    tags: ["hockey","set-plays","applied","viz"],
+    link: "The%20Relationship%20Between%20Penalty%20Corner%20Conversion%20Rates%20and%20Match%20Results%20in%20Field%20Hockey.pdf",
+    linkLabel: "Open PDF",
+    external: false
+  },
+  {
+    title: "Fixture Congestion — Research Proposal",
+    kind: "Slides (PPTX)",
+    desc: "Study design for effects of dense schedules on xG, defensive actions, and clean sheets.",
+    bullets: [
+      "Defines sampling windows and identification approach.",
+      "Operationalises workload indicators and outcomes.",
+      "Outlines analysis plan and limitations."
+    ],
+    tags: ["football","research design","workload"],
+    link: "Research%20Proposal%20Sarvesh%20Dalvi.pptx",
+    linkLabel: "Download PPTX",
+    external: false
+  },
+  {
+    title: "City Recommendation — Rock ’n’ Roll Marathon",
+    kind: "Slides (PPTX)",
+    desc: "Weighted scoring model + Tableau visuals to shortlist host cities.",
+    bullets: [
+      "Feature selection and normalisation for city attributes.",
+      "Composite scoring and sensitivity quick-check.",
+      "Communicated recommendations with dashboard views."
+    ],
+    tags: ["dashboards","decision science","tableau"],
+    link: "Rock%20%27n%27%20Roll%20Marathon%20%E2%80%93%20City%20Recommendation.pptx",
+    linkLabel: "Download PPTX",
+    external: false
+  },
+  {
+    title: "Data Analysis Techniques in Sports",
+    kind: "Slides (PPTX)",
+    desc: "Compact deck explaining Linear Regression, PCA, and Neural Networks in sport contexts.",
+    bullets: [
+      "Intuition-first explanations; minimal maths.",
+      "Toy examples and pitfalls to watch for.",
+      "Links to applied use-cases."
+    ],
+    tags: ["methods","education","slides"],
+    link: "Sarvesh_Data%20Analysis%20Techniques%20in%20Sports.pptx",
+    linkLabel: "Download PPTX",
+    external: false
+  },
+  {
+    title: "Journal Critique — xG & Shot Efficiency",
+    kind: "Report (PDF)",
+    desc: "Critical appraisal of an expected-goals study; what holds up in practice and what to improve.",
+    bullets: [
+      "Assessed model features, calibration and leakage risk.",
+      "Discussed ecological validity for coaching contexts.",
+      "Suggested richer context features for xG variants."
+    ],
+    tags: ["football","xG","methods","literature"],
+    link: "Sarvesh%27s%20Journal%20Critique.pdf",
+    linkLabel: "Open PDF",
+    external: false
+  },
+  {
+    title: "F1 Project — Race Dashboard (Tableau)",
+    kind: "Dashboard (External)",
+    desc: "Interactive Tableau dashboard for race metrics and driver comparisons.",
+    bullets: [
+      "Driver/race selectors with dynamic time series and splits.",
+      "Clean, high-contrast design for quick scanning.",
+      "Published to Tableau Public for fast sharing."
+    ],
+    tags: ["dashboards","tableau","motorsport"],
+    link: "https://public.tableau.com/views/F1Project_17415675953580/RACEDASHBOARD?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
+    linkLabel: "View dashboard",
+    external: true,
+    thumbText: "Tableau — F1 Race Dashboard"
+  }
+];
+
+// ===== Filters =====
+const TAG_ORDER = ["all","football","hockey","dashboards","tableau","methods","xG","set-plays","club analysis","passing","research design","workload","decision science","education","literature","motorsport","viz","applied"];
+const filtersEl = document.getElementById('filters');
+const gridEl = document.getElementById('grid');
+
+function uniqTags() {
+  const s = new Set();
+  PROJECTS.forEach(p => p.tags.forEach(t => s.add(t)));
+  const arr = Array.from(s);
+  const ordered = TAG_ORDER.filter(t => t==="all" || arr.includes(t));
+  const extras = arr.filter(t => !TAG_ORDER.includes(t));
+  return ["all", ...ordered.filter(t=>t!=="all"), ...extras];
+}
+
+let activeTag = "all";
+
+function renderFilters() {
+  filtersEl.innerHTML = "";
+  uniqTags().forEach(tag => {
+    const b = document.createElement('button');
+    b.className = 'filter' + (tag===activeTag ? ' active' : '');
+    b.textContent = tag;
+    b.onclick = () => { activeTag = tag; renderGrid(); renderFilters(); };
+    filtersEl.appendChild(b);
+  });
+}
+
+function cardThumb(p){
+  const div = document.createElement('div');
+  div.className = 'thumb';
+  div.textContent = p.thumbText || (p.external ? "External dashboard" : p.kind);
+  return div;
+}
+
+function renderGrid(){
+  gridEl.innerHTML = "";
+  const q = new URLSearchParams(location.search).get('q')?.toLowerCase() || "";
+  PROJECTS.filter(p => {
+    const tagOk = (activeTag==="all") || p.tags.includes(activeTag);
+    const qOk = !q || p.title.toLowerCase().includes(q) || p.desc.toLowerCase().includes(q) || p.tags.join(' ').includes(q);
+    return tagOk && qOk;
+  }).forEach(p => {
+    const card = document.createElement('article');
+    card.className = 'card';
+
+    card.appendChild(cardThumb(p));
+
+    const h3 = document.createElement('h3');
+    h3.textContent = p.title;
+    card.appendChild(h3);
+
+    const chips = document.createElement('div');
+    chips.className = 'tags';
+    const kindChip = document.createElement('span');
+    kindChip.className = 'chip';
+    kindChip.textContent = p.kind;
+    chips.appendChild(kindChip);
+    p.tags.forEach(t=>{
+      const c = document.createElement('span');
+      c.className = 'chip';
+      c.textContent = t;
+      chips.appendChild(c);
+    });
+    card.appendChild(chips);
+
+    const d = document.createElement('p');
+    d.className = 'desc';
+    d.textContent = p.desc;
+    card.appendChild(d);
+
+    const more = document.createElement('div');
+    more.className = 'more';
+    const ul = document.createElement('ul');
+    p.bullets.forEach(b=>{
+      const li = document.createElement('li'); li.textContent = b; ul.appendChild(li);
+    });
+    more.appendChild(ul);
+    card.appendChild(more);
+
+    const actions = document.createElement('div');
+    actions.className = 'actions';
+    const open = document.createElement('a');
+    open.className = 'btn small';
+    open.textContent = p.linkLabel;
+    open.href = p.link;
+    if(p.external){ open.target = "_blank"; open.rel="noopener"; }
+    actions.appendChild(open);
+
+    const details = document.createElement('button');
+    details.className = 'btn small';
+    details.textContent = 'More info';
+    details.onclick = () => { more.style.display = more.style.display==='block' ? 'none' : 'block'; };
+    actions.appendChild(details);
+
+    card.appendChild(actions);
+    gridEl.appendChild(card);
+  });
+}
+
+// Keyboard shortcut: / to quick-filter by query param
+document.addEventListener('keydown', (e)=>{
+  if(e.key==='/'){
+    e.preventDefault();
+    const term = prompt('Quick filter: type a word or tag');
+    if(term!==null){
+      const url = new URL(location.href);
+      if(term.trim()===''){ url.searchParams.delete('q'); }
+      else { url.searchParams.set('q', term.trim()); }
+      location.href = url.toString();
+    }
+  }
+});
+
+renderFilters();
+renderGrid();
+</script>
+</body>
+</html>
