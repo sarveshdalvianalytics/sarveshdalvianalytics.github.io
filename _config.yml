@@ -4,13 +4,13 @@ description: "Sports Data & Performance Analytics"
 url: "https://sarveshdalvianalytics.github.io"
 repository: "sarveshdalvianalytics/sarveshdalvianalytics.github.io"
 
-remote_theme: "mmistakes/minimal-mistakes"
+remote_theme: "mmistakes/minimal-mistakes@4.24.0"
 minimal_mistakes_skin: "dark"
 
 # Plugins needed for remote themes and caching
 plugins:
-  - jekyll-include-cache
   - jekyll-remote-theme
+  - jekyll-include-cache
 
 # Include custom pages directory
 include:
