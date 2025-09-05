@@ -6,7 +6,7 @@ author_profile: true
 entries_layout: grid
 ---
 
-{% for project in site.projects reversed %}
-  {% include archive-single.html post=project %}
+{% for post in site.projects reversed %}
+  {% include archive-single.html %}
 {% endfor %}
 
