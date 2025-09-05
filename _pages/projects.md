@@ -1,12 +1,10 @@
 ---
-layout: archive
 title: "Projects"
+layout: collection
 permalink: /projects/
-author_profile: true
+collection: projects
 entries_layout: grid
+author_profile: true
 ---
 
-{% for post in site.projects reversed %}
-  {% include archive-single.html %}
-{% endfor %}
 
