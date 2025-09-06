@@ -1,5 +1,5 @@
 ---
-title: "Journal Critique — xG & Shot Efficiency"
+title: "Journal Critique - xG & Shot Efficiency"
 excerpt: "Critical read of a classic xG paper. I summarise the method, test the assumptions, and note what holds up vs modern data."
 date: 2024-10-10
 header:
@@ -12,7 +12,7 @@ Strengths: simple, explainable framework.
 Gaps: spatial context and shot pressure.
 
 Upgrade path: add freeze-frame context and goalkeeper positioning.
-CTA: PDF: Open the critique →
 
 **PDF:** [Open](/Sarvesh%27s%20Journal%20Critique.pdf){:target="_blank"}
+
 
