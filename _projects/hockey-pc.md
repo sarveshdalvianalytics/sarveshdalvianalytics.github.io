@@ -1,7 +1,7 @@
 ---
 title: "Penalty Corners & Match Results — Field Hockey"
 excerpt: "72-match FIH Pro League (Women): do PC conversion rates move the points column?"
-date: 2025-09-04
+date: 2025-02-01
 header:
   teaser: /assets/img/hockey_pccr_points_1200x630.png
 categories: [hockey]
