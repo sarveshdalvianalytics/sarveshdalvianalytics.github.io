@@ -19,14 +19,14 @@ kramdown:
 
 author:
   name: "Sarvesh Dalvi"
-  bio: "Sports Data & Performance Analyst (MSc, UEL). Football-first reporting, event coding, and dashboards. I care about clarity, repeatable methods, and answering the question “so what?” for coaches and players."
+  bio: "Sports Data & Performance Analyst (MSc, UEL) "
   location: "London, UK"
   links:
-    - label: "Email - “Let’s talk”"
+    - label: "Email - Let’s talk!"
       url: "mailto:sarveshdlvuk@gmail.com"
-    - label: "LinkedIn - “Profile”"
+    - label: "LinkedIn - Let’s Connect"
       url: "https://www.linkedin.com/in/sarveshdalvi80"
-    - label: "Tableau - “Public dashboards”"
+    - label: "My Tableau Profile"
       url: "https://public.tableau.com/app/profile/sarvesh.dalvi"
 
 # Collections
