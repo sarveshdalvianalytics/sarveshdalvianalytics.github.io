@@ -12,7 +12,7 @@ Hypothesis: load compression degrades defensive organisation before chance creat
 Design: match-level panel; rest-day buckets; mixed effects with team/season controls.
 
 What this gives: a reusable template for club load-vs-performance studies.
-CTA: Slides: Download PPTX →
 
 **Slides:** [Download PPTX](/Research%20Proposal%20Sarvesh%20Dalvi.pptx)
+
 
