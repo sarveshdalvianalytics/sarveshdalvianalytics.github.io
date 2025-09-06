@@ -8,8 +8,8 @@ categories: [methods]
 tags: [education, slides]
 ---
 Built for non-technical staff; examples are sport-specific.
-CTA: Slides: Download PPTX →
 
 **Slides:** [Download PPTX](/Sarvesh_Data%20Analysis%20Techniques%20in%20Sports.pptx)
+
 
 
