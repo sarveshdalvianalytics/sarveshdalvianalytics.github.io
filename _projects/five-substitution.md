@@ -12,6 +12,5 @@ Method: pre/post design with league controls; minutes distribution & role splits
 Result: subs came earlier and were more evenly spread; closing minutes became a genuine “fresh legs” phase.
 
 Coaching take: plan for a second tactical window after 70’ and keep one sub for late-game scenarios.
-CTA: PDF: Open the report →
 
 **PDF:** [Open the report](/Impact%20of%20the%20Five-Substitution%20Rule%20-%20Sarvesh.pdf){:target="_blank"}
